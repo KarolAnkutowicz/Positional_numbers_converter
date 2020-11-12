@@ -16,7 +16,9 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    converters.cpp
+    converters.cpp \
+    converterstest.cpp
 
 HEADERS += \
-    converters.h
+    converters.h \
+    converterstest.h

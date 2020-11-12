@@ -2,12 +2,14 @@
 /* main.cpp */
 
 #include "converters.h"
+#include "converterstest.h"
 
 using namespace std;
 
 int main()
 {
-    funConverterHandling();
+    //funConverterHandling();
+    funTest();
 
     return 0;
 }
