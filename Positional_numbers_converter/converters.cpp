@@ -29,7 +29,7 @@ unsigned long long funToTen(unsigned long long aNumber, unsigned short aBase)
     unsigned long long fResult = 0, fRest = 0, fIndex = 1;
     do
     {
-        fRest = aNumber % aBase; // wyznaczenie reszty z dzielenia
+        fRest = aNumber % 10; // wyznaczenie reszty z dzielenia
         fResult += fRest * fIndex; // dodanie do rezultatu
         aNumber = (aNumber - fRest) / 10; // nowa liczba startowa
         fIndex *= aBase; // nowy index
