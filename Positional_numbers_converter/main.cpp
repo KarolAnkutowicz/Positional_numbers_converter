@@ -8,8 +8,8 @@ using namespace std;
 
 int main()
 {
-    funConverterHandling();
-    //funTest();
+    //funConverterHandling();
+    funTest1();
 
     return 0;
 }

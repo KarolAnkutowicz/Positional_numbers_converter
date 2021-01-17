@@ -9,16 +9,16 @@ using namespace std;
 unsigned short vDataRecord;
 
 /*
- * void funCreateFileTest()
+ * void funCreateFileTest1()
  */
-void funCreateFileTest()
+void funCreateFileTest1()
 {
     unsigned short vLengthNumber = 0, vDigit = 0;
     long long vNumber, vPotega;
     vDataRecord = 0;
     srand(time_t(NULL)+(unsigned int)&vNumber); // generowanie liczb pseudolosowych
     ofstream strOut; // utworzenie strumienia wpisywania do pliku
-    strOut.open("test.txt"); // otwarcie strumienia
+    strOut.open("test1.txt"); // otwarcie strumienia
     for (unsigned short i = 2; i <= 10; i++) // z tej bazy zamieniamy
     {
         for (unsigned short j = 2; j <= 10; j++) // na te baze zamieniamy
@@ -48,15 +48,27 @@ void funCreateFileTest()
 }
 
 /*
- * void funTest()
+ * void funCreateFileTest2(unsigned short parBase1, unsigned short parBase2, unsigned short parExamples)
  */
-void funTest()
+void funCreateFileTest2(unsigned short parBase1, unsigned short parBase2, unsigned short parExamples)
+{
+    for (unsigned short i = 0; i < parExamples; i++)
+    {
+
+    }
+}
+
+
+/*
+ * void funTest1()
+ */
+void funTest1()
 {
     long long vNumber1, vNumber2;
     unsigned short vBase1, vBase2;
-    funCreateFileTest(); // stworzenie pliku testowego
+    funCreateFileTest1(); // stworzenie pliku testowego
     ifstream strIn; // utworzenie strumienia odczytywania z pliku
-    strIn.open("test.txt"); // otwarcie pliku
+    strIn.open("test1.txt"); // otwarcie pliku
     for (unsigned short i = 0; i < vDataRecord; i++) // przejscie po wszystkich zestawach danych
     {
         strIn >> skipws >> vNumber1 >> vBase1 >> vBase2;

@@ -12,7 +12,7 @@
 using namespace std;
 
 /*
- * funCreateFileTest() - funkcja tworzaca plik umozliwiajacy
+ * funCreateFileTest1() - funkcja tworzaca plik umozliwiajacy
  * przetestowanie poprawnosci dzialania konwersji liczb
  * pomiedzy systemami pozycyjnymi o roznych podstawach.
  * PRE:
@@ -20,10 +20,19 @@ using namespace std;
  * POST:
  * - brak.
  */
-void funCreateFileTest();
+void funCreateFileTest1();
 
 /*
- * funTest() - funkcja przeprowadzajaca test poprawnosci
+ * void funCreateFileTest2(unsigned short parBase1, unsigned short parBase2, unsigned short parExamples) -
+ * PRE:
+ * - brak.
+ * POST:
+ * - brak.
+ */
+void funCreateFileTest2(unsigned short parBase1, unsigned short parBase2, unsigned short parExamples);
+
+/*
+ * funTest1() - funkcja przeprowadzajaca test poprawnosci
  * dzialania konwersji liczb. Wykorzystuje tworzenie pliku
  * za pomoca funkcja funCreateTest() a nastepnie korzysta
  * z utworzonego w ten sposob pliku.
@@ -32,7 +41,7 @@ void funCreateFileTest();
  * POST:
  * - brak.
  */
-void funTest();
+void funTest1();
 
 #endif // CONVERTERSTEST_H
 
