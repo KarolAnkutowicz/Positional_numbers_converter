@@ -5,6 +5,7 @@
 #define CONVERTERSTEST_H
 
 #include <cstdlib>
+#include <ctime>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -32,7 +33,7 @@ void funCreateFileTest1();
 void funCreateFileTest2(unsigned short parBase1, unsigned short parBase2, unsigned short parExamples);
 
 /*
- * funTest1() - funkcja przeprowadzajaca test poprawnosci
+ * void funTest(unsigned short parTypeTest) - funkcja przeprowadzajaca test poprawnosci
  * dzialania konwersji liczb. Wykorzystuje tworzenie pliku
  * za pomoca funkcja funCreateTest() a nastepnie korzysta
  * z utworzonego w ten sposob pliku.
@@ -41,7 +42,7 @@ void funCreateFileTest2(unsigned short parBase1, unsigned short parBase2, unsign
  * POST:
  * - brak.
  */
-void funTest1();
+void funTest(unsigned short parTypeTest);
 
 #endif // CONVERTERSTEST_H
 

@@ -52,27 +52,54 @@ void funCreateFileTest1()
  */
 void funCreateFileTest2(unsigned short parBase1, unsigned short parBase2, unsigned short parExamples)
 {
+    unsigned short vLengthNumber = 0, vDigit = 0;
+    long long vNumber, vPotega;
+    vDataRecord = 0;
+    ofstream strOut; // utworzenie strumienia wpisywania do pliku
+    strOut.open("test2.txt"); // otwarcie strumienia
+    srand(time(NULL)); // generowanie liczb pseudolosowych
     for (unsigned short i = 0; i < parExamples; i++)
     {
-
+        vDataRecord++;
+        vPotega = 1;
+        vNumber = 0;
+        vLengthNumber = rand() % 6 + 1; // wylosowanie dlugosci ciagu cyfr
+        for (unsigned short j = 0; j < vLengthNumber; j++)
+        {
+            vDigit = rand() % parBase1; // losowanie cyfry
+            if ((j == 0) && (vDigit == 0))
+                vDigit++;
+            vNumber += vPotega * vDigit; // w dodawaniu kazda liczbe traktujemy...
+            vPotega *= 10;               // ... jak liczbe dziesietna
+            if (j == (vLengthNumber - 1))
+                strOut /*cout*/ << vNumber << " " << parBase1 << " " << parBase2 << endl;
+        }
     }
+    strOut.close(); // zmakniecie strumienia
 }
 
 
 /*
- * void funTest1()
+ * void funTest(unsigned short parTypeTest)
  */
-void funTest1()
+void funTest(unsigned short parTypeTest)
 {
     long long vNumber1, vNumber2;
     unsigned short vBase1, vBase2;
-    funCreateFileTest1(); // stworzenie pliku testowego
     ifstream strIn; // utworzenie strumienia odczytywania z pliku
-    strIn.open("test1.txt"); // otwarcie pliku
+    if (parTypeTest == 1)
+    {
+        funCreateFileTest1(); // stworzenie pliku testowego
+        strIn.open("test1.txt"); // otwarcie pliku
+    }
+    else
+    {
+        funCreateFileTest2(2, 10, 10); // stworzenie pliku testowego
+        strIn.open("test2.txt"); // otwarcie pliku
+    }
     for (unsigned short i = 0; i < vDataRecord; i++) // przejscie po wszystkich zestawach danych
     {
         strIn >> skipws >> vNumber1 >> vBase1 >> vBase2;
-        //cout << vNumber1 << " " << vBase1 << " " << vBase2 << endl;
         if (vBase1 == vBase2) // obie podstawy sa rowne
             vNumber2 = vNumber1;
         else if ((vBase1 == 10) && (vBase2 != 10)) // zamiana z liczby dziesietnej

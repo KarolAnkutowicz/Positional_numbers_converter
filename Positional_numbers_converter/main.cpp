@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
     //funConverterHandling();
-    funTest1();
+    funTest(2);
 
     return 0;
 }
