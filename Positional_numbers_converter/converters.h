@@ -4,9 +4,14 @@
 #ifndef CONVERTERS_H
 #define CONVERTERS_H
 
+#include <cstdlib>
+#include <ctime>
+#include <fstream>
+#include <iomanip>
 #include <iostream>
 
 using namespace std;
+
 
 /*
  * funFromTen() - funkcja przeliczajaca liczbe z systemu dziesetnego na inny.
@@ -18,7 +23,6 @@ using namespace std;
  */
 unsigned long long funFromTen(unsigned long long aNumber, unsigned short aBase);
 
-
 /*
  * funToTen() - funkcja przeliczajaca liczbe na system dziesietny.
  * PRE:
@@ -27,7 +31,7 @@ unsigned long long funFromTen(unsigned long long aNumber, unsigned short aBase);
  * POST:(
  * - zwrocenie liczby dziesietnej (typ: unsigned long).
  */
-unsigned long long funToTen(unsigned long long aNumber, unsigned short aBase);
+//unsigned long long funToTen(unsigned long long aNumber, unsigned short aBase);
 
 
 /*
@@ -39,8 +43,17 @@ unsigned long long funToTen(unsigned long long aNumber, unsigned short aBase);
  * POST:
  * - potwierdzenie lub zaprzeczenie poprawnosci cyfr (typ: bool)
  */
-bool funNumberCheck(unsigned long long aNumber, unsigned short aBase);
+//bool funNumberCheck(unsigned long long aNumber, unsigned short aBase);
 
+
+/*
+ * funMainMenu() - funkcja wyswietlajaca menu glowne programu.
+ * PRE:
+ * - brak;
+ * POST:
+ * - brak.
+ */
+//void funMainMenu();
 
 /*
  * funConverterHandling() - funkcja obslugujaca konwertowanie liczb
@@ -50,7 +63,41 @@ bool funNumberCheck(unsigned long long aNumber, unsigned short aBase);
  * POST:
  * - brak.
  */
-void funConverterHandling();
+//void funConverterHandling();
+
+/*
+ * funCreateFileTest1() - funkcja tworzaca plik umozliwiajacy
+ * przetestowanie poprawnosci dzialania konwersji liczb
+ * pomiedzy systemami pozycyjnymi o roznych podstawach.
+ * PRE:
+ * - brak.
+ * POST:
+ * - brak.
+ */
+//void funCreateFileTest1();
+
+/*
+ * void funCreateFileTest2(unsigned short parBase1, unsigned short parBase2, unsigned short parExamples) -
+ * PRE:
+ * - brak.
+ * POST:
+ * - brak.
+ */
+//void funCreateFileTest2(unsigned short parBase1, unsigned short parBase2, unsigned short parExamples);
+
+/*
+ * void funTest(unsigned short parTypeTest) - funkcja przeprowadzajaca test poprawnosci
+ * dzialania konwersji liczb. Wykorzystuje tworzenie pliku
+ * za pomoca funkcja funCreateTest() a nastepnie korzysta
+ * z utworzonego w ten sposob pliku.
+ * PRE:
+ * - brak.
+ * POST:
+ * - brak.
+ */
+//void funTest(unsigned short parTypeTest);
+
+
 
 
 #endif // CONVERTERS_H
