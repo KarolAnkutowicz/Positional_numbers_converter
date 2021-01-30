@@ -31,8 +31,7 @@ unsigned long long funFromTen(unsigned long long aNumber, unsigned short aBase);
  * POST:(
  * - zwrocenie liczby dziesietnej (typ: unsigned long).
  */
-//unsigned long long funToTen(unsigned long long aNumber, unsigned short aBase);
-
+unsigned long long funToTen(unsigned long long aNumber, unsigned short aBase);
 
 /*
  * funNumberCheck() - funkcja sprawdzajaca czy wprowadzaona liczba nie
@@ -43,8 +42,27 @@ unsigned long long funFromTen(unsigned long long aNumber, unsigned short aBase);
  * POST:
  * - potwierdzenie lub zaprzeczenie poprawnosci cyfr (typ: bool)
  */
-//bool funNumberCheck(unsigned long long aNumber, unsigned short aBase);
+bool funNumberCheck(unsigned long long aNumber, unsigned short aBase);
 
+/*
+ * funCreateFileTest() - funkcja tworzaca plik umozliwiajacy
+ * przetestowanie poprawnosci dzialania konwersji liczb
+ * pomiedzy systemami pozycyjnymi o roznych podstawach.
+ * PRE:
+ * - brak.
+ * POST:
+ * - brak.
+ */
+void funCreateFileTest();
+
+/*
+ * void funCreateFileTest(unsigned short parBase1, unsigned short parBase2, unsigned short parExamples) -
+ * PRE:
+ * - brak.
+ * POST:
+ * - brak.
+ */
+void funCreateFileTest(unsigned short parBase1, unsigned short parBase2, unsigned short parExamples);
 
 /*
  * funMainMenu() - funkcja wyswietlajaca menu glowne programu.
@@ -65,25 +83,7 @@ unsigned long long funFromTen(unsigned long long aNumber, unsigned short aBase);
  */
 //void funConverterHandling();
 
-/*
- * funCreateFileTest1() - funkcja tworzaca plik umozliwiajacy
- * przetestowanie poprawnosci dzialania konwersji liczb
- * pomiedzy systemami pozycyjnymi o roznych podstawach.
- * PRE:
- * - brak.
- * POST:
- * - brak.
- */
-//void funCreateFileTest1();
 
-/*
- * void funCreateFileTest2(unsigned short parBase1, unsigned short parBase2, unsigned short parExamples) -
- * PRE:
- * - brak.
- * POST:
- * - brak.
- */
-//void funCreateFileTest2(unsigned short parBase1, unsigned short parBase2, unsigned short parExamples);
 
 /*
  * void funTest(unsigned short parTypeTest) - funkcja przeprowadzajaca test poprawnosci
