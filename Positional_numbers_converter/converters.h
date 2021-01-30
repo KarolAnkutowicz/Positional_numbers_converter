@@ -74,6 +74,26 @@ void funCreateFileTest(unsigned short parBase1, unsigned short parBase2, unsigne
 void funMainMenu();
 
 /*
+ * funHandlingWithoutFile() - funkcja zajmujaca sie obsluga konwersji liczb
+ * wprowadzanych z klawiatury (bez obslugi plikow).
+ * PRE:
+ * - brak;
+ * POST:
+ * - brak.
+ */
+void funHandlingWithoutFile();
+
+/*
+ * funHandlingWithFile(unsigned short parOption) - funkcja zajmujaca sie
+ * obsluga konwersji liczb z plikow.
+ * PRE:
+ * - podanie numeru rodzaju obslugi - numer rodzaju pliku (argument: parOption);
+ * POST:
+ * - brak.
+ */
+void funHandlingWithFile(unsigned short parOption);
+
+/*
  * funConverterHandling() - funkcja obslugujaca konwertowanie liczb
  * w systemach pozycyjnych o podstawach od 2 do 10.
  * PRE:
