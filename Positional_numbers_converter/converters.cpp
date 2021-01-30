@@ -132,127 +132,117 @@ void funCreateFileTest(unsigned short parBase1, unsigned short parBase2, unsigne
  * POST:
  * - brak.
  */
-/*void funMainMenu()
+void funMainMenu()
 {
     cout << "Jaki tryb programu uruchomic?" << endl
          << "1 - reczne wprowadzanie danych" << endl
          << "2 - generowanie pliku ze wszystkimi konwersjami" << endl
          << "3 - generowanie pliku ze wskazana konwersja i liczba przykladow"
          << endl << endl;
-}*/
+}
 
 /*
- * funConverterHandling()
+ * funConverterHandling() - funkcja obslugujaca konwertowanie liczb
+ * w systemach pozycyjnych o podstawach od 2 do 10.
+ * PRE:
+ * - brak.
+ * POST:
+ * - brak.
  */
-/*void funConverterHandling()
+void funConverterHandling()
 {
     unsigned long long vNumber1, vNumber2;
     unsigned short vOption, vBase1, vBase2, vExamples;
     funMainMenu();
     cout << "Numer opcji: ";
     cin >> vOption;
-    switch (vOption)
+    if ((vOption == 2) || (vOption == 3))
     {
-    case 1 :
-    case 2 : funTest(1);
-        break;
-    case 3 : cout << "Podaj podstawe z jakies zamieniac (2-10)" << endl
-                  << "Podstawa bazowa: ";
-        cin >> vBase1;
-        cout << "Podaj podstawa na jaka zamieniac (2-10)" << endl
-             << "Podstawa docelowa: ";
-        cin >> vBase2;
-        cout << "Podaj liczbe przykladow" << endl
-             << "Liczba przykladow: ";
-        cin >> vExamples;
-    default : cout << "Podany numer jest nieprawidlowy!" << endl;
-        break;
-    }
-}*/
-
-
-/*void funConverterHandling()
-{
-    unsigned long long vNumber1, vNumber2;
-    unsigned short vBase1, vBase2;
-    for (;;)
-    {
-        cout << "Podaj liczbe ktora chcesz zamienic: ";
-        cin >> vNumber1; // wczytanie liczby, ktora chcemy zamienic
-        if (vNumber1 == 0) // wczytanie zera powoduje wyjscie z programu
-            break;
-        cout << "Jej podstawe: ";
-        cin >> vBase1; // wczytanie podstawy podanej liczby
-        if ((vBase1 < 2) || (vBase1 > 10)) // sprawdzenie poprawnosci wprowadzenia podstawy
+        ifstream strIn; // utworzenie strumienia odczytywania z pliku
+        if (vOption == 2)
         {
-            cerr << "Nieprawidlowa podstawa!" << endl << endl;
-            continue;
-        }
-        cout << "Oraz podstawe na jaka chcesz zamienic: ";
-        cin >> vBase2; // wczytanie podstawy na jaka chcemy zamienic
-        if ((vBase2 < 2) || (vBase2 > 10)) // sprawdzenie poprawnosci wprowadzenia podstawy
-        {
-            cerr << "Nieprawidlowa podstawa!" << endl << endl;
-            continue;
-        }
-        if (funNumberCheck(vNumber1, vBase1)) // sprawdzenie poprawnosci podanej liczby i jej podstawy
-        {
-            if (vBase1 == vBase2) // obie podstawy sa rowne
-                vNumber2 = vNumber1;
-            else if ((vBase1 == 10) && (vBase2 != 10)) // zamiana z liczby dziesietnej
-                vNumber2 = funFromTen(vNumber1, vBase2);
-            else if ((vBase1 != 10) && (vBase2 == 10)) // zamiana na liczbe dziesietna
-                vNumber2 = funToTen(vNumber1, vBase1);
-            else // obie liczby nie beda w systemie dziesietnym
-                vNumber2 = funFromTen(funToTen(vNumber1, vBase1), vBase2);
-            cout << endl << vNumber1 << " (" << vBase1 << ") = "
-                 << vNumber2 << " (" << vBase2 << ")" << endl << endl; // wypisanie wyniku
+            funCreateFileTest(); // stworzenie pliku testowego
+            strIn.open("test1.txt"); // otwarcie pliku
         }
         else
-            cout << endl << "Podana liczba zawiera bledne znaki!" << endl << endl;
+        {
+            cout << "Podaj podstawe z jakies zamieniac (2-10)" << endl
+                 << "Podstawa bazowa: ";
+            cin >> vBase1;
+            cout << "Podaj podstawa na jaka zamieniac (2-10)" << endl
+                 << "Podstawa docelowa: ";
+            cin >> vBase2;
+            cout << "Podaj liczbe przykladow" << endl
+                 << "Liczba przykladow: ";
+            cin >> vExamples;
+            if ((vBase1 < 2) || (vBase1 > 10) || (vBase2 < 2) || (vBase2 > 10))
+                cout << "Niepoprawny zestaw argumentow!" << endl;
+            else
+            {
+                funCreateFileTest(vBase1, vBase2, vExamples); // stworzenie pliku testowego
+                strIn.open("test2.txt"); // otwarcie pliku
+                for (unsigned short i = 0; i < vDataRecord; i++) // przejscie po wszystkich zestawach danych
+                {
+                    strIn >> skipws >> vNumber1 >> vBase1 >> vBase2;
+                    if (vBase1 == vBase2) // obie podstawy sa rowne
+                        vNumber2 = vNumber1;
+                    else if ((vBase1 == 10) && (vBase2 != 10)) // zamiana z liczby dziesietnej
+                        vNumber2 = funFromTen(vNumber1, vBase2);
+                    else if ((vBase1 != 10) && (vBase2 == 10)) // zamiana na liczbe dziesietna
+                        vNumber2 = funToTen(vNumber1, vBase1);
+                    else // obie liczby nie beda w systemie dziesietnym
+                        vNumber2 = funFromTen(funToTen(vNumber1, vBase1), vBase2);
+                    cout << vNumber1 << " (" << vBase1 << ") = "
+                         << vNumber2 << " (" << vBase2 << ")" << endl << endl; // wypisanie wyniku
+                }
+            }
+            strIn.close(); // zamkniecie strumienia
+        }
     }
-    cout << endl << "Do zobaczenia!" << endl;
-}*/
-
-
-
-
-
-/*
- * void funTest(unsigned short parTypeTest)
- */
-/*void funTest(unsigned short parTypeTest)
-{
-    long long vNumber1, vNumber2;
-    unsigned short vBase1, vBase2, vExamples;
-    ifstream strIn; // utworzenie strumienia odczytywania z pliku
-    if (parTypeTest == 1)
+    else if (vOption != 1)
     {
-        funCreateFileTest1(); // stworzenie pliku testowego
-        strIn.open("test1.txt"); // otwarcie pliku
+        cout << "Podany numer jest nieprawidlowy!" << endl;
     }
     else
     {
-        funCreateFileTest2(vBase1, vBase2, vExamples); // stworzenie pliku testowego
-        strIn.open("test2.txt"); // otwarcie pliku
+        for (;;)
+        {
+            cout << "Podaj liczbe ktora chcesz zamienic: ";
+            cin >> vNumber1; // wczytanie liczby, ktora chcemy zamienic
+            if (vNumber1 == 0) // wczytanie zera powoduje wyjscie z programu
+                break;
+            cout << "Jej podstawe: ";
+            cin >> vBase1; // wczytanie podstawy podanej liczby
+            if ((vBase1 < 2) || (vBase1 > 10)) // sprawdzenie poprawnosci wprowadzenia podstawy
+            {
+                cerr << "Nieprawidlowa podstawa!" << endl << endl;
+                continue;
+            }
+            cout << "Oraz podstawe na jaka chcesz zamienic: ";
+            cin >> vBase2; // wczytanie podstawy na jaka chcemy zamienic
+            if ((vBase2 < 2) || (vBase2 > 10)) // sprawdzenie poprawnosci wprowadzenia podstawy
+            {
+                cerr << "Nieprawidlowa podstawa!" << endl << endl;
+                continue;
+            }
+            if (funNumberCheck(vNumber1, vBase1)) // sprawdzenie poprawnosci podanej liczby i jej podstawy
+            {
+                if (vBase1 == vBase2) // obie podstawy sa rowne
+                    vNumber2 = vNumber1;
+                else if ((vBase1 == 10) && (vBase2 != 10)) // zamiana z liczby dziesietnej
+                    vNumber2 = funFromTen(vNumber1, vBase2);
+                else if ((vBase1 != 10) && (vBase2 == 10)) // zamiana na liczbe dziesietna
+                    vNumber2 = funToTen(vNumber1, vBase1);
+                else // obie liczby nie beda w systemie dziesietnym
+                    vNumber2 = funFromTen(funToTen(vNumber1, vBase1), vBase2);
+                cout << endl << vNumber1 << " (" << vBase1 << ") = "
+                     << vNumber2 << " (" << vBase2 << ")" << endl << endl; // wypisanie wyniku
+            }
+            else
+                cout << endl << "Podana liczba zawiera bledne znaki!" << endl << endl;
+        }
     }
-    for (unsigned short i = 0; i < vDataRecord; i++) // przejscie po wszystkich zestawach danych
-    {
-        strIn >> skipws >> vNumber1 >> vBase1 >> vBase2;
-        if (vBase1 == vBase2) // obie podstawy sa rowne
-            vNumber2 = vNumber1;
-        else if ((vBase1 == 10) && (vBase2 != 10)) // zamiana z liczby dziesietnej
-            vNumber2 = funFromTen(vNumber1, vBase2);
-        else if ((vBase1 != 10) && (vBase2 == 10)) // zamiana na liczbe dziesietna
-            vNumber2 = funToTen(vNumber1, vBase1);
-        else // obie liczby nie beda w systemie dziesietnym
-            vNumber2 = funFromTen(funToTen(vNumber1, vBase1), vBase2);
-        cout << vNumber1 << " (" << vBase1 << ") = "
-             << vNumber2 << " (" << vBase2 << ")" << endl << endl; // wypisanie wyniku
-    }
-    strIn.close(); // zamkniecie strumienia
-}*/
-
+}
 
 /* converters.cpp */
 /********** END_OF_FILE **********/

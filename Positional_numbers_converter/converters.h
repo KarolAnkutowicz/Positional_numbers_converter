@@ -71,7 +71,7 @@ void funCreateFileTest(unsigned short parBase1, unsigned short parBase2, unsigne
  * POST:
  * - brak.
  */
-//void funMainMenu();
+void funMainMenu();
 
 /*
  * funConverterHandling() - funkcja obslugujaca konwertowanie liczb
@@ -81,24 +81,7 @@ void funCreateFileTest(unsigned short parBase1, unsigned short parBase2, unsigne
  * POST:
  * - brak.
  */
-//void funConverterHandling();
-
-
-
-/*
- * void funTest(unsigned short parTypeTest) - funkcja przeprowadzajaca test poprawnosci
- * dzialania konwersji liczb. Wykorzystuje tworzenie pliku
- * za pomoca funkcja funCreateTest() a nastepnie korzysta
- * z utworzonego w ten sposob pliku.
- * PRE:
- * - brak.
- * POST:
- * - brak.
- */
-//void funTest(unsigned short parTypeTest);
-
-
-
+void funConverterHandling();
 
 #endif // CONVERTERS_H
 

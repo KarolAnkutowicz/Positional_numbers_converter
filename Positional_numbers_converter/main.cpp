@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-    //funConverterHandling();
+    funConverterHandling();
 
     return 0;
 }
