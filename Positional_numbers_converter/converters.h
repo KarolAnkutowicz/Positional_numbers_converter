@@ -1,5 +1,8 @@
 /********** BEGIN_OF_FILE **********/
-/* converters.h */
+/*
+ * author: Karol Ankutowicz
+ * file: converters.h
+ */
 
 #ifndef CONVERTERS_H
 #define CONVERTERS_H

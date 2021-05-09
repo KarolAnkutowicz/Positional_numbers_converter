@@ -1,5 +1,8 @@
 /********** BEGIN_OF_FILE **********/
-/* converters.cpp */
+/*
+ * author: Karol Ankutowicz
+ * file: converters.cpp
+ */
 
 #include "converters.h"
 
