@@ -151,7 +151,7 @@ void funHandlingWithoutFile()
 {
     unsigned long long vNumber1, vNumber2; // zadeklarowanie zmiennych: liczby zamienianej i wynikowej
     unsigned short vBase1, vBase2; //  zadeklarowanie zmiennych: podstawy zamienianej i docelowej
-    for (;;)
+    for (;;) // nieskonczona petla
     {
         cout << "Podaj liczbe ktora chcesz zamienic: ";
         cin >> vNumber1; // wczytanie liczby, ktora chcemy zamienic
@@ -214,7 +214,7 @@ void funHandlingWithFile(unsigned short parOption)
              << "Liczba przykladow: ";
         cin >> vExamples; // podanie liczby przykladow
         if ((vBase1 < 2) || (vBase1 > 10) || (vBase2 < 2) || (vBase2 > 10)) // sprawdzenie poprawnosci podania podstaw
-            cout << "Niepoprawny zestaw argumentow!" << endl; // wyswietlenie komunikatu o bledzie
+            cerr << "Niepoprawny zestaw argumentow!" << endl; // wyswietlenie komunikatu o bledzie
         else // przypadek poprawnego podania zestawu argumentow
         {
             funCreateFileTest(vBase1, vBase2, vExamples); // stworzenie pliku testowego
@@ -255,7 +255,7 @@ void funConverterHandling()
     if ((vOption == 2) || (vOption == 3)) // sprawdzenie cZy chcemy operowac na plikach
         funHandlingWithFile(vOption); // jesli tak to wywolujemy odpowienia obsluge
     else if (vOption != 1) // sprawdzamy czy w ogole podana opcja jest poprawna
-        cout << "Podany numer jest nieprawidlowy!" << endl; // jesli nie to wyswietlamy odpowiedni komunikat
+        cerr << "Podany numer jest nieprawidlowy!" << endl; // jesli nie to wyswietlamy odpowiedni komunikat
     else // jesli wszystko jest ok...
         funHandlingWithoutFile(); // ...to pozostaje nam ostatnia opcja - biezace zamiany wprowadzanych recznie przykladow
 }
