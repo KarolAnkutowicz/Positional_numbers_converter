@@ -4,8 +4,9 @@
  * file: converters.hpp
  */
 
-#ifndef CONVERTERS_HPP
-#define CONVERTERS_HPP
+//#ifndef CONVERTERS_HPP
+//#define CONVERTERS_HPP
+#pragma once
 
 #include <cstdlib>
 #include <ctime>
@@ -13,7 +14,7 @@
 #include <iomanip>
 #include <iostream>
 
-using namespace std;
+//using namespace std;
 
 
 /*
@@ -106,7 +107,7 @@ void funHandlingWithFile(unsigned short parOption);
  */
 void funConverterHandling();
 
-#endif // CONVERTERS_HPP
+//#endif // CONVERTERS_HPP
 
 /* converters.hpp */
 /********** END_OF_FILE **********/

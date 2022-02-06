@@ -6,7 +6,7 @@
 
 #include "converters.hpp"
 
-using namespace std;
+//using namespace std;
 
 unsigned short vDataRecord;
 
@@ -63,6 +63,7 @@ bool funNumberCheck(unsigned long long aNumber, unsigned short aBase)
  */
 void funCreateFileTest()
 {
+    using namespace std; // zapowiedz wykorzystania elementow standardowej przestrzeni nazw
     unsigned short vLengthNumber = 0, vDigit = 0; // zdefiniowanie zmiennych okreslajacych: liczbe cyfr, wartosc cyfry
     long long vNumber, vExponent; // zadeklarowanie zmiennych okreslajacych: zamieniana liczbe, potege podstawy
     vDataRecord = 0; // ustanowienie wartosci zmiennej globalnej
@@ -102,6 +103,7 @@ void funCreateFileTest()
  */
 void funCreateFileTest(unsigned short parBase1, unsigned short parBase2, unsigned short parExamples)
 {
+    using namespace std; // zapowiedz wykorzystania elementow standardowej przestrzeni nazw
     unsigned short vLengthNumber = 0, vDigit = 0; // zdefiniowanie zmiennych okreslajacych: liczbe cyfr, wartosc cyfry
     long long vNumber, vExponent; // zadeklarowanie zmiennych okreslajacych: zamieniana liczbe, potege podstawy
     vDataRecord = 0; // ustanowienie wartosci zmiennej globalnej
@@ -137,6 +139,7 @@ void funCreateFileTest(unsigned short parBase1, unsigned short parBase2, unsigne
  */
 void funMainMenu()
 {
+    using namespace std; // zapowiedz wykorzystania elementow standardowej przestrzeni nazw
     cout << "Jaki tryb programu uruchomic?" << endl // wypisanie glownego menu programu
         << "1 - reczne wprowadzanie danych" << endl
         << "2 - generowanie pliku ze wszystkimi konwersjami" << endl
@@ -149,6 +152,7 @@ void funMainMenu()
  */
 void funHandlingWithoutFile()
 {
+    using namespace std; // zapowiedz wykorzystania elementow standardowej przestrzeni nazw
     unsigned long long vNumber1, vNumber2; // zadeklarowanie zmiennych: liczby zamienianej i wynikowej
     unsigned short vBase1, vBase2; //  zadeklarowanie zmiennych: podstawy zamienianej i docelowej
     for (;;) // nieskonczona petla
@@ -194,6 +198,7 @@ void funHandlingWithoutFile()
  */
 void funHandlingWithFile(unsigned short parOption)
 {
+    using namespace std; // zapowiedz wykorzystania elementow standardowej przestrzeni nazw
     unsigned long long vNumber1, vNumber2; // zadeklarowanie zmiennych: liczby zamienianej i wynikowej
     unsigned short vBase1, vBase2, vExamples; // zadeklarowanie zmiennych: podstawy bazowej, podstawy wynikowej i liczby przykladowe
     ifstream strIn; // utworzenie strumienia odczytywania z pliku
@@ -248,6 +253,7 @@ void funHandlingWithFile(unsigned short parOption)
  */
 void funConverterHandling()
 {
+    using namespace std; // zapowiedz wykorzystania elementow standardowej przestrzeni nazw
     unsigned short vOption; // zadeklarowanie zmiennej okreslajacej wybrana opcje
     funMainMenu(); // wyswietlenie menu glownego
     cout << "Numer opcji: ";
