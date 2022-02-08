@@ -6,8 +6,6 @@
 
 #include "converters.hpp"
 
-using namespace std;
-
 int main()
 {
     funConverterHandling();

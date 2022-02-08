@@ -67,7 +67,7 @@ void funCreateFileTest()
     unsigned short vLengthNumber = 0, vDigit = 0; // zdefiniowanie zmiennych okreslajacych: liczbe cyfr, wartosc cyfry
     long long vNumber, vExponent; // zadeklarowanie zmiennych okreslajacych: zamieniana liczbe, potege podstawy
     vDataRecord = 0; // ustanowienie wartosci zmiennej globalnej
-    srand(time_t(NULL) + (unsigned int)&vNumber); // generowanie liczb pseudolosowych
+    srand(time_t(NULL) + (unsigned long long)&vNumber); // generowanie liczb pseudolosowych
     ofstream strOut; // utworzenie strumienia wpisywania do pliku
     strOut.open("test1.txt"); // otwarcie strumienia
     for (unsigned short i = 2; i <= 10; i++) // z tej bazy zamieniamy
@@ -109,7 +109,7 @@ void funCreateFileTest(unsigned short parBase1, unsigned short parBase2, unsigne
     vDataRecord = 0; // ustanowienie wartosci zmiennej globalnej
     ofstream strOut; // utworzenie strumienia wpisywania do pliku
     strOut.open("test2.txt"); // otwarcie strumienia
-    srand(time(NULL)); // generowanie liczb pseudolosowych
+    srand(time_t(NULL)); // generowanie liczb pseudolosowych
     for (unsigned short i = 0; i < parExamples; i++) // liczba przejsc przez petle jest rowna liczbie przykladow
     {
         vDataRecord++; // inkrementacja liczby przykladow

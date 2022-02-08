@@ -4,8 +4,6 @@
  * file: converters.hpp
  */
 
-//#ifndef CONVERTERS_HPP
-//#define CONVERTERS_HPP
 #pragma once
 
 #include <cstdlib>
@@ -13,9 +11,6 @@
 #include <fstream>
 #include <iomanip>
 #include <iostream>
-
-//using namespace std;
-
 
 /*
  * funFromTen() - funkcja przeliczajaca liczbe z systemu dziesetnego na inny.
@@ -106,8 +101,6 @@ void funHandlingWithFile(unsigned short parOption);
  * - brak.
  */
 void funConverterHandling();
-
-//#endif // CONVERTERS_HPP
 
 /* converters.hpp */
 /********** END_OF_FILE **********/

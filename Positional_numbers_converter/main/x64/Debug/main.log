@@ -1,7 +1,5 @@
 ﻿  main.cpp
   converters.cpp
-C:\Github\Positional_numbers_converter\Positional_numbers_converter\main\converters.cpp(70,48): warning C4311: "typ rzutowania": obcięcie wskaźnika z "__int64 *" do "unsigned int"
-C:\Github\Positional_numbers_converter\Positional_numbers_converter\main\converters.cpp(70,48): warning C4302: "typ rzutowania": obcięcie z "__int64 *" do "unsigned int"
-C:\Github\Positional_numbers_converter\Positional_numbers_converter\main\converters.cpp(112,15): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+C:\Github\Positional_numbers_converter\Positional_numbers_converter\main\converters.cpp(70,24): warning C4244: "argument": konwersja z "unsigned __int64" do "unsigned int", możliwa utrata danych
   Generowanie kodu...
   main.vcxproj -> C:\Github\Positional_numbers_converter\Positional_numbers_converter\x64\Debug\main.exe
