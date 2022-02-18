@@ -1,5 +1,0 @@
-﻿  main.cpp
-  converters.cpp
-C:\Github\Positional_numbers_converter\Positional_numbers_converter\main\converters.cpp(70,24): warning C4244: "argument": konwersja z "unsigned __int64" do "unsigned int", możliwa utrata danych
-  Generowanie kodu...
-  main.vcxproj -> C:\Github\Positional_numbers_converter\Positional_numbers_converter\x64\Debug\main.exe
